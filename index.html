@@ -15,38 +15,24 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <p class="lead" id="currentDay"></p>
     </header>
 
       <main class="container-fluid">
-        <div class="row"" id="time-block">
-            <div class="col"id="hour" >  9:00 AM</div>
-            <div class="col"id="hour" >10:00 AM</div>
-            <div class="col" id="hour">11:00 AM</div>
-            <div class="col" id="hour">12:00 PM</div>
-            <div class="col" id="hour">  1:00 PM</div>
-            <div class="col" id="hour">  2:00 PM</div>
-            <div class="col" id="hour">  3:00 PM</div>
-            <div class="col" id="hour">  4:00 PM</div>
-            <div class="col" id="hour">  5:00 PM</div>
-          </div>
-            
-        <div class="row">
-            <div class="col-md-6" id="time-block-content">text</div>
-            <div class="container-fluid" id="time-block-content"></div>
-            <div class="container-fluid" id="time-block-content"></div>
-            <div class="container-fluid" id="time-block-content"></div>
-            <div class="container-fluid" id="time-block-content"></div>
-            <div class="container-fluid" id="time-block-content"></div>
-            <div class="container-fluid" id="time-block-content"></div>
-            <div class="container-fluid" id="time-block-content"></div>
-            <div class="container-fluid" id="time-block-content"></div>
+        <div class="row" id="time-block">
+          <div>
+              <div class="col-3" id="hour justify-content-center" >  9:00 AM</div>
+              <textarea class="col-6"></textarea>
+              <button class="col-3 align-content-right" id="saveBtn" type="submit">Add Task</button>
         </div>
 
+        <!-- <div class="row" id="saveBtn">
+          <button class="btn" id="saveBtn" type="submit">Add Task</button>
+        </div>-->
       </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <scritpt src="assets/js/script.js"></scritpt>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
