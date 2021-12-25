@@ -1,6 +1,6 @@
 var today = new Date();
 // // current date
-var date =  moment().format('dddd, MMMM Do');
+var date =  moment().format('dddd, MMMM Do, YYYY');
 document.getElementById("currentDay").innerHTML= date;
 
 var userInputEl = document.getElementsByClassName('time-block-content');
