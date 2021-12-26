@@ -103,5 +103,5 @@ var createTimeBlocks = function() {
 
 
 
-dynamicListEl.addEventListener('onload', createTimeBlocks());
+// dynamicListEl.addEventListener('onload', createTimeBlocks());
 // userInputEl.addEventListener("click", createTask);

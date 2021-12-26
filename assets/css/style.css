@@ -4,7 +4,7 @@ body {
   line-height: 1;
 }
 
-#textarea,
+#textarea1,
 #textarea2,
 #textarea3,
 #textarea4,
@@ -15,9 +15,10 @@ body {
 #textarea9 {
   background: transparent;
   border: solid;
-  resize: auto;
+  resize: none;
   color: #918f8f;
   border-left: 1px solid black;
+  height: 150px;
   padding: 10px;
 }
 
@@ -34,7 +35,7 @@ body {
 }
 
 #time-block{
-  text-align: center;
+  text-align: right;
   border-radius: 15px;
 }
 
