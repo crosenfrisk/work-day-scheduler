@@ -5,7 +5,10 @@ var time =  moment().format('LT');
 document.getElementById("currentDay").innerHTML= date;
 document.getElementById("currentTime").innerHTML=time;
 
-// Array to hold time block data, store to local storage, and update dynamically.
+// Var created to establish page load for currentTime() below
+var main = document.querySelector('main');
+
+// Array to hold time block data, store to local storage, and update color-coding dynamically.
 var schedData = [
     {
         time: '9:00 A.M.',
@@ -55,64 +58,35 @@ var schedData = [
 ];
 
 var currentTime = function () {
+    // Set var currentId to schedData time items
+    var currentId = "#" + schedData[i].time;
+    // Set currentEl to currentId in html, that way each div will update within for() loop below.
+    var currentEl = document.querySelector(currentId);
+
         for (var i= 0; i < schedData.length; i++ ){
-            
+        // Cycle through each time block when page loads to check currentTime against time present in schedData item object.
         if (schedData[i].time < time){
-            
-            schedData[i].time.className="past";
+        
+        // Time block div and related content div next to it will be grey if in the past.
+            currentEl.className += " past";        
+        
         } else if (schedData[i].time === time){
-      
-            schedData[i].time.className="present";
+        // Time block div and related content div next to it will be red if in the current hour.
+            currentEl.className += " present";
+
         } else { 
-  
-            schedData[i].time.className="future";
+        // Time block div and related content div next to it will be green if it has yet to pass.
+            currentEl.className += " future";
         }
     }
 }
 
-// var main = document.querySelector('main');
-
-// var hour9El = document.querySelector('#hour9');
-// hour9El.className += " past";
-// hour9El.className += " present";
-// hour9El.className += " future";
-
-// var textarea1El = document.querySelector('#textarea1');
-// textarea1El.className += " past";
-// textarea1El.className += " present";
-// textarea1El.className += " future";
-
-
-// Do I need to use querySelector to find and define ids of time, content, and buttons?
-// var dynamicListEl = document.querySelector('#dynamic-list');
-
-// // Dynamically create HTML <div> elements and <button>s from schedData[i].
-// var timeDivEl = document.createElement('div');
-// var contentDivEl = document.createElement('div');
-// var buttonEl = document.createElement('button');
-
-// var createTimeBlocks = function() {
-//     for (var i = 0; i < schedData.length; i++ ){
-//         timeDivEl.textContent = schedData[i].time;
-//         timeDivEl.id = "hour";
-
-//         contentDivEl.textContent = schedData[i].content;
-//         contentDivEl.id = "textarea";
-
-//         buttonEl.textContent = schedData[i].button;
-//         buttonEl.id = "saveBtn";
-//     }
-//     dynamicListEl.append(timeDivEl, contentDivEl, buttonEl);
-// };
-
-// createTimeBlocks();
-
 // Get input from user for time block
-//var userInputEl = document.getElementById('textarea');
+var userInputEl = document.getElementById('textarea');
 
 // Add userInput to localStorage
-// var savedItem = JSON.stringify(userInput);
-// localStorage.setItem("userInput", savedItem);
+var savedItemEl = JSON.stringify(userInputEl);
+localStorage.setItem("userInput", savedItemEl);
 
 // var savedItem = createElement('textarea');
 // document.getElementById('textarea').addEventListener("click", modifyInput );

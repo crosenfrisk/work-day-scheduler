@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Work Day Scheduler</title>
+    <title class="description">Work Day Scheduler</title>
   </head>
 
   <body>
@@ -19,45 +19,46 @@
       <p class="lead" id="currentTime"></p>
     </header>
 
-      <main class="container-fluid d-flex" id="time-block">
-        <div class="row">
+      <main class="container-fluid d-flex">
+        <div class="row time-block" id="currentId">
 
-            <div class="col-sm-2 col-md-2 col-lg-2 hour" id="hour9" > 9:00 A.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea1"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn1" type="submit"><i class="fas fa-save"></i></button>
+            <div class="col-sm-2 col-md-2 cl-lg-1 hour" id="hour9" > 9:00 A.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea1"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg- align-content-right mr-3 saveBtn" id="saveBtn1" type="submit"><i class="fas fa-save"></i></button>
 
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour10" >10:00 A.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea2"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn2" type="submit"><i class="fas fa-save"></i></button>
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour10" >10:00 A.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea2"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn2" type="submit"><i class="fas fa-save"></i></button>
 
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour11" >11:00 A.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea3"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn3" type="submit"><i class="fas fa-save"></i></button>
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour11" >11:00 A.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea3"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn3" type="submit"><i class="fas fa-save"></i></button>
+          
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour12" >12:00 P.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea4"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn4" type="submit"><i class="fas fa-save"></i></button>
 
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour12" >12:00 P.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea4"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn4" type="submit"><i class="fas fa-save"></i></button>
-        
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour1" >1:00 P.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea5"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn5" type="submit"><i class="fas fa-save"></i></button>
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour1" >1:00 P.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea5"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn5" type="submit"><i class="fas fa-save"></i></button>
 
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour2" >2:00 P.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea6"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn6" type="submit"><i class="fas fa-save"></i></button>
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour2" >2:00 P.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea6"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn6" type="submit"><i class="fas fa-save"></i></button>
 
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour3" >3:00 P.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea7"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn7" type="submit"><i class="fas fa-save"></i></button>
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour3" >3:00 P.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea7"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn7" type="submit"><i class="fas fa-save"></i></button>
 
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour4" >4:00 P.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea8"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn8" type="submit"><i class="fas fa-save"></i></button>
-        
-            <div class="col-sm-2  col-md-2  col-lg-2 hour " id="hour5" >5:00 P.M.</div>
-            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-center textarea" id="textarea9"></textarea>
-            <button class="col-sm-2 col-md-2 col-lg-1 saveBtn" id="saveBtn9" type="submit"><i class="fas fa-save"></i></button>
-          </div>
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour4" >4:00 P.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea8"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn8" type="submit"><i class="fas fa-save"></i></button>
+
+            <div class="col-sm-2  col-md-2 col-lg-2 hour" id="hour5" >5:00 P.M.</div>
+            <textarea class="col-sm-8 col-md-8 col-lg-8 justify-content-left textarea" id="textarea9"></textarea>
+            <button class="col-sm-2 col-md-2 col-lg-2 align-content-right mr-3 saveBtn" id="saveBtn9" type="submit"><i class="fas fa-save"></i></button>
+
+        </div>
       </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
