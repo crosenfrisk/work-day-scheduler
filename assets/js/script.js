@@ -1,9 +1,7 @@
 // Display current date on header
 var today = new Date();
 var date =  moment().format('dddd, MMMM Do, YYYY');
-var time =  moment().format('LT');
 document.getElementById("currentDay").innerHTML= date;
-document.getElementById("currentTime").innerHTML=time;
 
 // Var created to establish page load for currentTime() below
 var main = document.querySelector('main');
@@ -12,65 +10,79 @@ var main = document.querySelector('main');
 var schedData = [
     {
         time: '9:00 A.M.',
+        timeClock: 9,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '10:00 A.M.',
+        timeClock: 10,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '11:00 A.M.',
+        timeClock: 11,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '12:00 P.M.',
+        timeClock: 12,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '1:00 P.M.',
+        timeClock: 13,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '2:00 P.M.',
+        timeClock: 14,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '3:00 P.M.',
+        timeClock: 15,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '4:00 P.M.',
+        timeClock: 16,
         content: ' ',
         button: 'saveBtn',
     },
     {
         time: '5:00 P.M.',
+        timeClock: 17,
         content: ' ',
         button: 'saveBtn',
     },
 ];
 
 var currentTime = function () {
+    // Set current time for reference
+    var timeNow =  today.getHours(24);
+    console.log(timeNow);
+
     // Set var currentId to schedData time items
-    var currentId = "#" + schedData[i].time;
+    var currentId = "#" + schedData[i] + timeNow;
+
     // Set currentEl to currentId in html, that way each div will update within for() loop below.
-    var currentEl = document.querySelector(currentId);
+    var currentEl = document.querySelector("#currentId");
 
         for (var i= 0; i < schedData.length; i++ ){
         // Cycle through each time block when page loads to check currentTime against time present in schedData item object.
-        if (schedData[i].time < time){
+        if (schedData[i].timeClock < timeNow){
         
         // Time block div and related content div next to it will be grey if in the past.
             currentEl.className += " past";        
         
-        } else if (schedData[i].time === time){
+        } else if (schedData[i].timeClock === timeNow){
         // Time block div and related content div next to it will be red if in the current hour.
             currentEl.className += " present";
 
@@ -81,6 +93,17 @@ var currentTime = function () {
     }
 }
 
+// Create function for saved user input in textarea
+var saveUserInput = function(event) {
+event.preventDefault();
+
+var savedItemEl = document.createElement('li');
+var savedContentEl = document.createElement('textarea');
+
+savedItemEl.className = "textarea";
+savedItemEl.textContent = "";
+savedContentEl.appendChild(savedItemEl);
+
 // Get input from user for time block
 var userInputEl = document.getElementById('textarea');
 
@@ -88,9 +111,11 @@ var userInputEl = document.getElementById('textarea');
 var savedItemEl = JSON.stringify(userInputEl);
 localStorage.setItem("userInput", savedItemEl);
 
-// var savedItem = createElement('textarea');
-// document.getElementById('textarea').addEventListener("click", modifyInput );
-// function modifyInput(){};
+// if (userInputEl === null) {
+//     return 
+// }
+
+}
 
 // Display userInput (ongoing)
 // var displayInput =  function() {
@@ -107,5 +132,4 @@ localStorage.setItem("userInput", savedItemEl);
 
 
 main.addEventListener('onload', currentTime());
-//dynamicListEl.addEventListener('onload', createTimeBlocks());
-// userInputEl.addEventListener("click", createTask);
+//userInputEl.addEventListener("submit", saveUserInput);
