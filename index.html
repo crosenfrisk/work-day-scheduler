@@ -20,16 +20,12 @@
 
       <main class="container-fluid">
         <div class="row" id="time-block">
-          <section>
-              <div class="col-3" id="hour justify-content-center" >  9:00 AM</div>
-              <textarea class="col-6" id="textarea"></textarea>
-              <button class="col-3 align-content-right" id="saveBtn" type="submit">Add Task</button>
-            </section>
+          <div class="col-12 d-flex" id="dynamic-list">
+              <div class="col-sm-1 align-content-right" id="hour" >  9:00 AM</div>
+              <textarea class="col-sm-9" id="textarea"></textarea>
+              <button class="col-sm col-1" id="saveBtn" type="submit"><i class="fas fa-save"></i></button>
+          </div>
         </div>
-
-        <!-- <div class="row" id="saveBtn">
-          <button class="btn" id="saveBtn" type="submit">Add Task</button>
-        </div>-->
       </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
