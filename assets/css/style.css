@@ -4,10 +4,18 @@ body {
   line-height: 1;
 }
 
-textarea{
+#textarea,
+#textarea2,
+#textarea3,
+#textarea4,
+#textarea5,
+#textarea6,
+#textarea7,
+#textarea8,
+#textarea9 {
   background: transparent;
   border: solid;
-  resize: none;
+  resize: auto;
   color: #918f8f;
   border-left: 1px solid black;
   padding: 10px;
@@ -36,9 +44,18 @@ textarea{
   border-top: 1px solid white;
 }
 
-#hour {
+#hour9,
+#hour10,
+#hour11,
+#hour12,
+#hour1,
+#hour2,
+#hour3,
+#hour4,
+#hour5 {
   background-color: #ffffff;
   color: #000000;
+  height: auto;
   border-top: 1px dashed #000000;
   border-right: black solid;
 }
@@ -58,7 +75,15 @@ textarea{
   color: white;
 }
 
-#saveBtn {
+#saveBtn1,
+#saveBtn2,
+#saveBtn3,
+#saveBtn4,
+#saveBtn5,
+#saveBtn6,
+#saveBtn7,
+#saveBtn8,
+#saveBtn9 {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;

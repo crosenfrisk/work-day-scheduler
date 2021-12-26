@@ -52,27 +52,29 @@ var schedData = [
     },
 ];
 
-// Dynamically create HTML <div> elements and <button>s from schedData[i].
+// Do I need to use querySelector to find and define ids of time, content, and buttons?
 var dynamicListEl = document.querySelector('#dynamic-list');
 
+// Dynamically create HTML <div> elements and <button>s from schedData[i].
 var timeDivEl = document.createElement('div');
-
 var contentDivEl = document.createElement('div');
 var buttonEl = document.createElement('button');
 
 var createTimeBlocks = function() {
     for (var i = 0; i < schedData.length; i++ ){
-        timeDivEl.textContent = schedData[i].time;
-        timeDivEl.className = "hour";
+        // timeDivEl.textContent = schedData[i].time;
+        // timeDivEl.id = "hour";
 
         contentDivEl.textContent = schedData[i].content;
-        contentDivEl.className = "textarea";
+        contentDivEl.id = "textarea";
 
-        buttonEl.textContent = schedData[i].button;
-        buttonEl.className = "saveBtn";
+        // buttonEl.textContent = schedData[i].button;
+        // buttonEl.id = "saveBtn";
     }
-    dynamicListEl.appendChild(timeDivEl, contentDivEl, buttonEl);
+    // dynamicListEl.appendChild(timeDivEl, contentDivEl, buttonEl);
 };
+
+// createTimeBlocks();
 
 // Get input from user for time block
 //var userInputEl = document.getElementById('textarea');
@@ -101,5 +103,5 @@ var createTimeBlocks = function() {
 
 
 
-
+dynamicListEl.addEventListener('onload', createTimeBlocks());
 // userInputEl.addEventListener("click", createTask);
