@@ -98,52 +98,61 @@ var currentTime = function () {
   }
 };
 
-// TODO: WHEN I click into a time block, then I can enter an event
-
-// TODO: WHEN I click save button for that time block
-// THEN the text for that event is saved in local storage.
-
-// TODO: WHEN I refresh the page
-// THEN the saved event persists.
-
 // Create function for saved user input in textarea
 var saveUserInput = function (event) {
+  // entered event persists after navigating away from page click on icon save button.
   event.preventDefault();
+  console.log('event target: ', event.target.id);
 
-  // var savedItemEl = document.querySelector('textarea').value;
-  var savedContentEl = document.querySelector("textarea").value;
+  var textareaId = "#hour" + event.target.id.replace("saveBtn", "");
+  console.log("hour", textareaId);
+  var savedContentEl = document.querySelector(textareaId);
+  console.log('saved content:' , savedContentEl.value);
 
-  savedItemEl.className = "textarea";
-  savedItemEl.textContent = "";
-  savedContentEl.appendChild(savedItemEl);
 
-  // Get input from user for time block
-  var userInputEl = document.getElementById("textarea");
+  //savedContentEl.textContent = "";
+  //savedContentEl.appendChild(savedItemEl);
 
   // Add userInput to localStorage
-  var savedItemEl = JSON.stringify(userInputEl);
+var savedItemEl = JSON.stringify(savedContentEl.value);
   localStorage.setItem("userInput", savedItemEl);
-
-  // if (userInputEl === null) {
-  //     return
-  // }
-};
+}
 
 // Display userInput (ongoing)
-// var displayInput =  function() {
-//  var text = " ";
+var displayInput =  function() {
+  var text = "";
 
-//  Retrieves items from local storage
-//  var savedItem = localStorage.getItem("savedItem");
-
-//  Parse string into object
-// var savedItemsArray = JSON.parse(savedItem);
-//      for (var i=0; i < savedItem.length; i++) {
-
+ // Retrieves items from local storage
+ var savedItem = localStorage.getItem("userInput");
+console.log('saved item: ',savedItem);
+// Parse string into object
+var savedItemsArray = JSON.parse(savedItem);
+//      for (var i=0; i < savedItemEl.length; i++) {
+// return savedItem;
 // }
+}
 
+// on page load current day displays
 main.addEventListener("onload", currentTime());
-//userInputEl.addEventListener("submit", saveUserInput);
+main.addEventListener("onload", displayInput());
 
+var savedContentEl9 = document.querySelector("#saveBtn9");
+var savedContentEl10 = document.querySelector("#saveBtn10");
+var savedContentEl11 = document.querySelector("#saveBtn11");
+var savedContentEl12 = document.querySelector("#saveBtn12");
+var savedContentEl13 = document.querySelector("#saveBtn13");
+var savedContentEl14 = document.querySelector("#saveBtn14");
+var savedContentEl15 = document.querySelector("#saveBtn15");
+var savedContentEl16 = document.querySelector("#saveBtn16");
+var savedContentEl17 = document.querySelector("#saveBtn17");
 
-
+// text content is saved in local storage by clicking save button directly.
+savedContentEl9.addEventListener("click", saveUserInput);
+savedContentEl10.addEventListener("click", saveUserInput);
+savedContentEl11.addEventListener("click", saveUserInput);
+savedContentEl12.addEventListener("click", saveUserInput);
+savedContentEl13.addEventListener("click", saveUserInput);
+savedContentEl14.addEventListener("click", saveUserInput);
+savedContentEl15.addEventListener("click", saveUserInput);
+savedContentEl16.addEventListener("click", saveUserInput);
+savedContentEl17.addEventListener("click", saveUserInput);

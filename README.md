@@ -20,7 +20,7 @@ Time blocks content is editable and entries persist within the browser window ev
 
 ## View the Project
 
-![Screenshot of Project](assets/images/--ADD)
+![Screenshot of Project](assets/images/WorkdayScheduler.png)
 
 https://crosenfrisk.github.io/work-day-scheduler/
 
