@@ -64,6 +64,62 @@ var schedData = [
   },
 ];
 
+var defaultData = [
+  {
+    time: "9:00 A.M.",
+    timeClock: 9,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "10:00 A.M.",
+    timeClock: 10,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "11:00 A.M.",
+    timeClock: 11,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "12:00 P.M.",
+    timeClock: 12,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "1:00 P.M.",
+    timeClock: 13,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "2:00 P.M.",
+    timeClock: 14,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "3:00 P.M.",
+    timeClock: 15,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "4:00 P.M.",
+    timeClock: 16,
+    content: " ",
+    button: "saveBtn",
+  },
+  {
+    time: "5:00 P.M.",
+    timeClock: 17,
+    content: " ",
+    button: "saveBtn",
+  },
+];
 var currentTime = function () {
   // Set current time for reference
   var timeNow = today.getHours(24);
@@ -103,39 +159,49 @@ var saveUserInput = function (event) {
   // entered event persists after navigating away from page click on icon save button.
   event.preventDefault();
   console.log('event target: ', event.target.id);
-
-  var textareaId = "#hour" + event.target.id.replace("saveBtn", "");
+var id = event.target.id.replace("saveBtn", "")
+  var textareaId = "#hour" + id;
   console.log("hour", textareaId);
   var savedContentEl = document.querySelector(textareaId);
   console.log('saved content:' , savedContentEl.value);
+console.log("sched", schedData);
+for(var i = 0; i < schedData.length; i++) {
 
-
-  //savedContentEl.textContent = "";
-  //savedContentEl.appendChild(savedItemEl);
+  if (schedData[i].timeClock == id) {
+    schedData[i].content = savedContentEl.value;
+  }
+}
 
   // Add userInput to localStorage
-var savedItemEl = JSON.stringify(savedContentEl.value);
-  localStorage.setItem("userInput", savedItemEl);
+  localStorage.setItem("schedData", JSON.stringify(schedData));
 }
 
 // Display userInput (ongoing)
 var displayInput =  function() {
-  var text = "";
 
- // Retrieves items from local storage
- var savedItem = localStorage.getItem("userInput");
-console.log('saved item: ',savedItem);
-// Parse string into object
-var savedItemsArray = JSON.parse(savedItem);
-//      for (var i=0; i < savedItemEl.length; i++) {
-// return savedItem;
-// }
+  // Retrieves items from local storage
+  var savedItem = localStorage.getItem("schedData");
+  console.log('saved item: ',JSON.parse(savedItem))
+
+  // Parse string into object
+  schedData = JSON.parse(savedItem);
+  if (schedData !== null){
+  for (var i=0; i < schedData.length; i++) { 
+      var id = "#hour" + schedData[i].timeClock;
+      var el = document.querySelector(id);
+      el.value = schedData[i].content;
+    }
+  } else {
+    schedData = defaultData;
+  }
 }
 
 // on page load current day displays
 main.addEventListener("onload", currentTime());
 main.addEventListener("onload", displayInput());
 
+
+// TODO: dynamically generate buttons for next version. current buttons save content from textarea to local storage.
 var savedContentEl9 = document.querySelector("#saveBtn9");
 var savedContentEl10 = document.querySelector("#saveBtn10");
 var savedContentEl11 = document.querySelector("#saveBtn11");
