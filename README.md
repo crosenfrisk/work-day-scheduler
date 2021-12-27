@@ -30,7 +30,7 @@ It took a while and a few iterations to create the current version of the applic
 
 Initially I wanted to create an index.html page that was dynamically updated by JavaScript to create all the `<div>`, `<textarea>` and `<button>` elements. 
 
-A problem presented itself after I tried to add an event listener to the JS file. The appendChild() function would only generate the last item in my `schedData[]` array, which made my `index.html` look rather empty and sad. You can view my `draft.js` and `draft.html` to see how this was laid out and the outcome.
+A problem presented itself after I tried to add an event listener to the JS file. The appendChild() function would only generate the last item in my `schedData[]` array, which made my `index.html` look rather empty and sad. You can view my draft folder which contains `draft.js` and `draft.html` to see how this was laid out and the outcome.
 
 Ultimately I decided upon a hardcoded `<div>`, `<textarea>` and `<button>` elements in my `index.html` file. I did use `id` properties to help identify elements and get them to tie into my JS functions.
 
