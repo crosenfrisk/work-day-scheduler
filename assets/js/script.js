@@ -98,6 +98,14 @@ var currentTime = function () {
   }
 };
 
+// TODO: WHEN I click into a time block, then I can enter an event
+
+// TODO: WHEN I click save button for that time block
+// THEN the text for that event is saved in local storage.
+
+// TODO: WHEN I refresh the page
+// THEN the saved event persists.
+
 // Create function for saved user input in textarea
 var saveUserInput = function (event) {
   event.preventDefault();
@@ -136,3 +144,6 @@ var saveUserInput = function (event) {
 
 main.addEventListener("onload", currentTime());
 //userInputEl.addEventListener("submit", saveUserInput);
+
+
+
